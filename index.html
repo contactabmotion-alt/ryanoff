@@ -21,6 +21,7 @@
 
   <!-- Preload image hero -->
   <link rel="preload" href="hero-bg.webp" as="image" />
+  <link rel="preload" href="hero-bg.mp4" as="video" type="video/mp4" />
 
   <!-- AOS - Animate On Scroll -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
@@ -564,7 +565,7 @@
         transition-duration: 0.01ms !important;
         animation-delay: 0ms !important;
       }
-      .hero__video { transform: scale(1); }
+      .hero__video { display: none; }
       [data-aos] { opacity: 1 !important; transform: none !important; }
     }
 
@@ -1368,8 +1369,10 @@
 
   <!-- ======================== HERO ======================== -->
   <section class="hero" id="hero">
-    <!-- Image de fond -->
-    <img class="hero__video" src="hero-bg.webp" alt="RAYAN'OFF salon" />
+    <!-- Vidéo de fond -->
+    <video class="hero__video" autoplay muted loop playsinline poster="hero-bg.webp">
+      <source src="hero-bg.mp4" type="video/mp4">
+    </video>
 
 
     <!-- Overlay permanent -->
