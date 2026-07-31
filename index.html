@@ -532,6 +532,32 @@
       transition: transform 0.3s var(--ease-spring);
     }
 
+    .hero__audio-btn {
+      position: absolute;
+      bottom: 32px;
+      right: 32px;
+      z-index: 5;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .hero__audio-btn:hover {
+      background: rgba(255, 214, 0, 0.2);
+      border-color: var(--yellow);
+      color: #ffffff;
+    }
+
     .hero__btn:hover i {
       transform: translateX(6px);
     }
@@ -1378,9 +1404,14 @@
   <!-- ======================== HERO ======================== -->
   <section class="hero" id="hero">
     <!-- Vidéo de fond -->
-    <video class="hero__video" autoplay muted loop playsinline poster="hero-bg.webp">
+    <video class="hero__video" id="heroVideo" autoplay muted loop playsinline poster="hero-bg.webp">
       <source src="hero-bg.mp4" type="video/mp4">
     </video>
+
+    <!-- Bouton audio -->
+    <button class="hero__audio-btn" id="heroAudioBtn" aria-label="Activer le son">
+      <i class="fas fa-volume-xmark"></i>
+    </button>
 
 
     <!-- Overlay permanent -->
@@ -2208,6 +2239,18 @@
 
       // Rafraîchir AOS
       AOS.refresh();
+    }
+
+    // Audio video hero
+    const heroVideo = document.getElementById('heroVideo');
+    const audioBtn = document.getElementById('heroAudioBtn');
+    if (heroVideo && audioBtn) {
+      audioBtn.addEventListener('click', () => {
+        heroVideo.muted = !heroVideo.muted;
+        audioBtn.innerHTML = heroVideo.muted
+          ? '<i class="fas fa-volume-xmark"></i>'
+          : '<i class="fas fa-volume-high"></i>';
+      });
     }
 
     // Écouteurs sur les boutons de langue
