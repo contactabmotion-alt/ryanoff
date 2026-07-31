@@ -435,6 +435,12 @@
       text-align: center;
       max-width: 900px;
       padding: 22vh 24px 0;
+      opacity: 0;
+      animation: fadeInContent 1s 13s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    @keyframes fadeInContent {
+      to { opacity: 1; }
     }
 
     @media (max-width: 768px) {
@@ -545,9 +551,9 @@
       flex-direction: column;
       align-items: center;
       gap: 8px;
+      opacity: 0;
+      animation: fadeInContent 0.8s 14s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
-
-    .hero__scroll-line {
       width: 8px;
       height: 8px;
       background: rgba(255, 255, 255, 0.5);
@@ -565,6 +571,8 @@
         transition-duration: 0.01ms !important;
         animation-delay: 0ms !important;
       }
+      .hero__content { opacity: 1; }
+      .hero__scroll { opacity: 1; }
       .hero__video { display: none; }
       [data-aos] { opacity: 1 !important; transform: none !important; }
     }
