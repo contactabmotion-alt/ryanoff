@@ -353,6 +353,23 @@
       }
     }
 
+    /* Image de repli (affichée après la fin de la vidéo) */
+    .hero__poster {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 0;
+      display: none;
+    }
+
+    .hero__poster--visible {
+      display: block;
+    }
+
     /* Overlay — vignette + grille urbaine */
     .hero__overlay {
       position: absolute;
@@ -600,6 +617,7 @@
       .hero__content { opacity: 1; }
       .hero__scroll { opacity: 1; }
       .hero__video { display: none; }
+      .hero__poster { display: block; }
       [data-aos] { opacity: 1 !important; transform: none !important; }
     }
 
@@ -1404,9 +1422,12 @@
   <!-- ======================== HERO ======================== -->
   <section class="hero" id="hero">
     <!-- Vidéo de fond -->
-    <video class="hero__video" id="heroVideo" autoplay muted loop playsinline poster="hero-bg.webp">
+    <video class="hero__video" id="heroVideo" autoplay muted playsinline poster="hero-bg.webp">
       <source src="hero-bg.mp4" type="video/mp4">
     </video>
+
+    <!-- Image de repli après la vidéo -->
+    <img class="hero__poster" id="heroPoster" src="hero-bg.webp" alt="RAYAN'OFF salon" />
 
     <!-- Bouton audio -->
     <button class="hero__audio-btn" id="heroAudioBtn" aria-label="Activer le son">
@@ -2244,12 +2265,20 @@
     // Audio video hero
     const heroVideo = document.getElementById('heroVideo');
     const audioBtn = document.getElementById('heroAudioBtn');
+    const heroPoster = document.getElementById('heroPoster');
     if (heroVideo && audioBtn) {
       audioBtn.addEventListener('click', () => {
         heroVideo.muted = !heroVideo.muted;
         audioBtn.innerHTML = heroVideo.muted
           ? '<i class="fas fa-volume-xmark"></i>'
           : '<i class="fas fa-volume-high"></i>';
+      });
+    }
+    // À la fin de la vidéo → retour à l'image
+    if (heroVideo && heroPoster) {
+      heroVideo.addEventListener('ended', () => {
+        heroVideo.style.display = 'none';
+        heroPoster.classList.add('hero__poster--visible');
       });
     }
 
