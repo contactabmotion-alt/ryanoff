@@ -2290,7 +2290,7 @@
           : '<i class="fas fa-volume-high"></i>';
       });
     }
-    // À la fin de la vidéo → fondu vers l'image
+    // À la fin de la vidéo → fondu vers l'image + sortie plein écran
     if (heroVideo && heroPoster) {
       heroVideo.addEventListener('ended', () => {
         heroVideo.classList.add('hero__video--fadeout');
@@ -2298,8 +2298,22 @@
         setTimeout(() => {
           heroVideo.style.display = 'none';
         }, 1400);
+        if (document.fullscreenElement || document.webkitFullscreenElement) {
+          (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+        }
       });
     }
+
+    // Premier clic/tap → plein écran pendant la lecture
+    let fullscreenStarted = false;
+    document.addEventListener('click', () => {
+      if (fullscreenStarted || !heroVideo || heroVideo.ended) return;
+      fullscreenStarted = true;
+      const enter = heroVideo.requestFullscreen || heroVideo.webkitRequestFullscreen;
+      if (enter) {
+        enter.call(heroVideo).catch(() => {});
+      }
+    }, { once: true });
 
     // Écouteurs sur les boutons de langue
     document.querySelectorAll('.lang-btn').forEach((btn) => {
