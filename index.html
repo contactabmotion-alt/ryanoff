@@ -344,7 +344,14 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
-      z-index: 0;
+      z-index: 1;
+      transition: opacity 1.4s ease;
+      background: var(--bg-deep);
+    }
+
+    .hero__video--fadeout {
+      opacity: 0;
+      pointer-events: none;
     }
 
     @media (max-width: 768px) {
@@ -353,7 +360,7 @@
       }
     }
 
-    /* Image de repli (affichée après la fin de la vidéo) */
+    /* Image de repli — toujours en dessous, révélée en fondu */
     .hero__poster {
       position: absolute;
       top: 0;
@@ -363,11 +370,21 @@
       object-fit: cover;
       object-position: center;
       z-index: 0;
-      display: none;
     }
 
     .hero__poster--visible {
-      display: block;
+      animation: posterReveal 1.4s ease both;
+    }
+
+    @keyframes posterReveal {
+      from {
+        transform: scale(1.05);
+        opacity: 0.5;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     /* Overlay — vignette + grille urbaine */
@@ -617,7 +634,6 @@
       .hero__content { opacity: 1; }
       .hero__scroll { opacity: 1; }
       .hero__video { display: none; }
-      .hero__poster { display: block; }
       [data-aos] { opacity: 1 !important; transform: none !important; }
     }
 
@@ -2274,11 +2290,14 @@
           : '<i class="fas fa-volume-high"></i>';
       });
     }
-    // À la fin de la vidéo → retour à l'image
+    // À la fin de la vidéo → fondu vers l'image
     if (heroVideo && heroPoster) {
       heroVideo.addEventListener('ended', () => {
-        heroVideo.style.display = 'none';
+        heroVideo.classList.add('hero__video--fadeout');
         heroPoster.classList.add('hero__poster--visible');
+        setTimeout(() => {
+          heroVideo.style.display = 'none';
+        }, 1400);
       });
     }
 
