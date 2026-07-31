@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="fr">
+<html class="no-js" lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1426,9 +1426,9 @@
       <li><a href="#reviews" data-nav data-i18n="nav.reviews">Avis</a></li>
       <li>
         <div class="nav__lang">
-          <button class="lang-btn active" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
           <button class="lang-btn" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="pt">PT</button>
+          <button class="lang-btn active" data-lang="pt">PT</button>
         </div>
       </li>
       <li><a href="#contact" class="nav__cta" data-nav data-i18n="nav.cta">Prendre rendez-vous</a></li>
@@ -1719,7 +1719,7 @@
         <div class="location__map" data-aos="fade-right" data-aos-duration="800">
           <!-- Remplacez la src par votre embed Google Maps -->
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9984380426575!2d2.292292615674499!3d48.85884407928753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1680000000000"
+            src="https://www.google.com/maps?q=Avenida+Engenheiro+George+Corbisier,+62,+S%C3%A3o+Paulo+-+SP,+04345-000,+Brazil&output=embed"
             allowfullscreen
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
@@ -1727,24 +1727,24 @@
           ></iframe>
         </div>
         <div class="location__info" data-aos="fade-left" data-aos-duration="800">
-          <h3>RAYAN'OFF</h3>
+          <h3>RAYAN'<span style="color: var(--yellow);">OFF</span></h3>
 
           <div class="location__detail">
             <i class="fas fa-map-pin"></i>
             <span>
-              12 Rue de la Coiffure<br />
-              75001 Paris, France
+              Avenida Engenheiro George Corbisier, 62<br />
+              04345-000 São Paulo, Brazil
             </span>
           </div>
 
           <div class="location__detail">
             <i class="fas fa-phone"></i>
-            <span><a href="tel:+33123456789" style="color:#FFD600;font-weight:600;">01 23 45 67 89</a></span>
+            <span><a href="tel:+5511968682733" style="color:#FFD600;font-weight:600;">+55 11 96868-2733</a></span>
           </div>
 
           <div class="location__detail">
-            <i class="fas fa-envelope"></i>
-            <span><a href="mailto:contact@rayanoff.fr" style="color:#FFD600;font-weight:600;">contact@rayanoff.fr</a></span>
+            <i class="fab fa-whatsapp"></i>
+            <span><a href="https://wa.me/33745211244" target="_blank" rel="noopener" style="color:#FFD600;font-weight:600;">WhatsApp — réponses rapides</a></span>
           </div>
 
           <div class="location__hours">
@@ -1779,7 +1779,7 @@
             </div>
           </div>
 
-          <a href="#" class="location__btn" target="_blank" rel="noopener" data-i18n="location.btn">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Avenida+Engenheiro+George+Corbisier,+62,+S%C3%A3o+Paulo+-+SP,+04345-000,+Brazil" class="location__btn" target="_blank" rel="noopener" data-i18n="location.btn">
             <i class="fas fa-directions"></i> Itinéraire
           </a>
         </div>
@@ -1799,7 +1799,7 @@
       </p>
 
       <div class="social__links" data-aos="fade-up" data-aos-delay="200">
-        <a href="#" class="social__link instagram" aria-label="Instagram" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/ryanbarbeiroo_/" class="social__link instagram" aria-label="Instagram" target="_blank" rel="noopener">
           <i class="fab fa-instagram"></i>
         </a>
         <a href="#" class="social__link tiktok" aria-label="TikTok" target="_blank" rel="noopener">
@@ -1808,7 +1808,7 @@
         <a href="#" class="social__link facebook" aria-label="Facebook" target="_blank" rel="noopener">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="#" class="social__link whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">
+        <a href="https://wa.me/33745211244" class="social__link whatsapp" aria-label="WhatsApp" target="_blank" rel="noopener">
           <i class="fab fa-whatsapp"></i>
         </a>
         <a href="#" class="social__link youtube" aria-label="YouTube" target="_blank" rel="noopener">
@@ -1831,12 +1831,12 @@
 
       <div class="contact__grid">
         <!-- Formulaire -->
-        <form class="contact__form" action="https://formspree.io/f/ton-id-formspree" method="POST" data-aos="fade-right" data-aos-duration="800">
+        <form class="contact__form" action="https://formspree.io/f/xykrqgre" method="POST" data-aos="fade-right" data-aos-duration="800">
           <div class="contact__form-row">
-            <input type="text" class="contact__input" placeholder="Prénom" data-i18n-placeholder="contact.ph.name" required />
-            <input type="tel" class="contact__input" placeholder="Téléphone" data-i18n-placeholder="contact.ph.tel" required />
+            <input type="text" class="contact__input" name="name" placeholder="Prénom" data-i18n-placeholder="contact.ph.name" required />
+            <input type="tel" class="contact__input" name="phone" placeholder="Téléphone" data-i18n-placeholder="contact.ph.tel" required />
           </div>
-          <select class="contact__input" required>
+          <select class="contact__input" name="service" required>
             <option value="" disabled selected data-i18n="contact.ph.service">Prestation souhaitée</option>
             <option data-i18n="pricing.name2">Coupe homme</option>
             <option data-i18n="pricing.name3">Coupe Jeune</option>
@@ -1845,10 +1845,10 @@
             <option data-i18n="contact.other">Autre</option>
           </select>
           <div class="contact__form-row">
-            <input type="date" class="contact__input" required />
-            <input type="time" class="contact__input" required />
+            <input type="date" class="contact__input" name="date" required />
+            <input type="time" class="contact__input" name="time" required />
           </div>
-          <textarea class="contact__input" placeholder="Un message particulier ? (optionnel)" data-i18n-placeholder="contact.ph.msg" rows="4"></textarea>
+          <textarea class="contact__input" name="message" placeholder="Un message particulier ? (optionnel)" data-i18n-placeholder="contact.ph.msg" rows="4"></textarea>
           <button type="submit" class="contact__submit" data-i18n="contact.submit">
             Envoyer <i class="fas fa-paper-plane"></i>
           </button>
@@ -1859,19 +1859,19 @@
           <div class="contact__info-card">
             <div class="icon"><i class="fas fa-phone-alt"></i></div>
             <h4 data-i18n="contact.card1">Téléphone</h4>
-            <p><a href="tel:+33123456789">01 23 45 67 89</a></p>
+            <p><a href="tel:+5511968682733">+55 11 96868-2733</a></p>
           </div>
 
           <div class="contact__info-card">
             <div class="icon"><i class="fab fa-whatsapp"></i></div>
             <h4>WhatsApp</h4>
-            <p><span data-i18n="contact.card2a">Écris-nous directement</span> <span data-i18n="contact.card2b">— réponse rapide garantie</span></p>
+            <p><a href="https://wa.me/33745211244" target="_blank" rel="noopener" data-i18n="contact.card2a">Écris-nous directement</a> <span data-i18n="contact.card2b">— réponse rapide garantie</span></p>
           </div>
 
           <div class="contact__info-card">
             <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
             <h4 data-i18n="contact.card3">Adresse</h4>
-            <p>12 Rue de la Coiffure, 75001 Paris</p>
+            <p>Avenida Engenheiro George Corbisier, 62<br/>04345-000 São Paulo, Brazil</p>
           </div>
         </div>
       </div>
@@ -1911,10 +1911,9 @@
 
         <div class="footer__col">
           <h4 data-i18n="contact.label">Contact</h4>
-          <a href="tel:+33123456789">01 23 45 67 89</a>
-          <a href="mailto:contact@rayanoff.fr">contact@rayanoff.fr</a>
-          <a href="https://wa.me/33123456789">WhatsApp</a>
-          <a href="#">Instagram</a>
+          <a href="tel:+5511968682733">+55 11 96868-2733</a>
+          <a href="https://wa.me/33745211244">WhatsApp</a>
+          <a href="https://www.instagram.com/ryanbarbeiroo_/" target="_blank" rel="noopener">Instagram</a>
           <a href="#">TikTok</a>
         </div>
       </div>
@@ -2236,7 +2235,7 @@
     };
 
     // ----- LANGUE SWITCHER -----
-    let currentLang = localStorage.getItem('rayanoff-lang') || 'fr';
+    let currentLang = localStorage.getItem('rayanoff-lang') || 'pt';
 
     function switchLanguage(lang) {
       currentLang = lang;
@@ -2319,6 +2318,50 @@
     document.querySelectorAll('.lang-btn').forEach((btn) => {
       btn.addEventListener('click', () => switchLanguage(btn.dataset.lang));
     });
+
+    // Envoi du formulaire → Formspree + WhatsApp
+    const contactForm = document.querySelector('.contact__form');
+    const WHATSAPP_NUMBER = '33745211244';
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('.contact__submit');
+        const original = btn.innerHTML;
+        const data = new FormData(contactForm);
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>';
+        btn.disabled = true;
+
+        // 1) Ouverture WhatsApp avec le message pré-rempli
+        const name = data.get('name') || '';
+        const phone = data.get('phone') || '';
+        const service = data.get('service') || '';
+        const date = data.get('date') || '';
+        const time = data.get('time') || '';
+        const message = data.get('message') || '';
+        const text = `Nouvelle réservation RAYAN'OFF%0A%0A👤 Nom : ${encodeURIComponent(name)}%0A📞 Téléphone : ${encodeURIComponent(phone)}%0A✂️ Prestation : ${encodeURIComponent(service)}%0A📅 Date : ${encodeURIComponent(date)}%0A⏰ Heure : ${encodeURIComponent(time)}%0A💬 Message : ${encodeURIComponent(message)}`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+
+        // 2) Envoi parallèle à Formspree
+        try {
+          const res = await fetch(contactForm.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' },
+          });
+          if (res.ok) {
+            btn.innerHTML = '<i class="fas fa-check"></i>';
+            contactForm.reset();
+            setTimeout(() => { btn.innerHTML = original; btn.disabled = false; }, 3000);
+          } else {
+            throw new Error('Formspree error');
+          }
+        } catch (err) {
+          btn.innerHTML = '<i class="fas fa-triangle-exclamation"></i>';
+          btn.disabled = false;
+          setTimeout(() => { btn.innerHTML = original; }, 3000);
+        }
+      });
+    }
 
     // Applique la langue au chargement
     switchLanguage(currentLang);
